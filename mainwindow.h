@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QBluetoothDeviceDiscoveryAgent>
+#include <QBluetoothSocket>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +21,9 @@ private slots:
     void captureDeviceProperties(const QBluetoothDeviceInfo &device);
 
     void searchFinished();
+    void connectionEstablished();
+    void connectionInterrupted();
+    void sockectReadyToRead();
 
     void on_pushButton_Search_clicked();
 
@@ -37,7 +41,9 @@ private:
     Ui::MainWindow *ui;
 
     QBluetoothDeviceDiscoveryAgent *discoveryAgent;
+    QBluetoothSocket *socket;
 
     void addToLogs(QString message);
+    void sendMessageToDevice(QString message);
 };
 #endif // MAINWINDOW_H
