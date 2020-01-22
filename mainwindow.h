@@ -19,6 +19,8 @@ public:
 private slots:
     void captureDeviceProperties(const QBluetoothDeviceInfo &device);
 
+    void searchFinished();
+
     void on_pushButton_Search_clicked();
 
     void on_pushButton_Connect_clicked();
@@ -33,6 +35,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
     QBluetoothDeviceDiscoveryAgent *discoveryAgent;
+
+    void addToLogs(QString message);
 };
 #endif // MAINWINDOW_H

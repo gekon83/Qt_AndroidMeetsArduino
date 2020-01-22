@@ -53,6 +53,11 @@
       <property name="title">
        <string>Logs</string>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QTextEdit" name="textEdit_Log"/>
+       </item>
+      </layout>
      </widget>
     </item>
     <item>
